@@ -1,0 +1,5 @@
+AuthUserFile ./user.psw
+AuthGroupFile /dev/null
+AuthName "Include Folder"
+AuthType Basic
+require valid-user

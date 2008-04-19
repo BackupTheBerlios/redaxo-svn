@@ -1,0 +1,99 @@
+Diese Datei ist nur für den REDAXO Kern gedacht inkl. den 
+AddOns: stats / import_export / image_resize
+
+Alle weiteren AddOns mit geplanten Änderungen etc. werden hier nicht
+angehandelt.
+
+---------------------------------------------------------------------------------
+Todos (Nach Prio sortiert):
+---------------------------------------------------------------------------------
+
+	* AddOns löschbar machen
+	* JS Linkmap umbauen 
+		* Artikel suchbar machen
+		* Struktur anzeigen und Artikel im Extra Bereich
+		* JS System ändern da bei viele Artikel alles ein wenig langsam wird.
+		* Root Artikel werden nicht angezeigt
+	* Templatehandling in den Kategorien
+		* Template fest zu Kategorien zuweisen können
+		* Default Templates festlegbar machen
+	* Mehrsprachigkeit / Charset System überdenken / utf-8 ..
+		* auch im setup testen
+		* htmlentities -> htmlspecialchars
+	* Umbau des Statistiktools. 
+		* Wenn Scripttime zuende da weitermachen wo es aufgehört hat.
+		* Fehler bei URLs mit $ z.b. $_POST .. Referer ..
+	* Artikel verschieben (System überlegen)
+	* Kategorien verschieben (System überlegen)
+	* Wenn viele Artikel in einer Kategorie: Automatische Blätternaktivierung
+	* <? -> <?php
+	* $REX[VAR]<? -> $REX['VAR'] (Bei allen Arrays)
+	* Permissions: 
+		* Developer raus
+		* "Online stellen verbieten" rein
+	* Tiny MCE bereinigen und unnötiges raus.
+	* Warnings/Notices entfernen
+	* Einheitliche FileHeaders
+	
+---------------------------------------------------------------------------------
+Planung / Irgendwann:
+---------------------------------------------------------------------------------
+
+	* Caching als Addon auslagern
+	* Historie mit Rollback
+	* Objektorientierterer Umbau. REX_.. werden Objekte und sind dann erweiterbar
+	* Komplette Platzhalter für Artikel. 
+		* REX_ARTICLE[2]
+		* REX_TEMPLATE[5]
+		* REX_ARTICLE_VARS['description'],REX_ARTICLE_VARS['id'],REX_ARTICLE_VARS['cat_id']
+		* REX_LINK_INTERN[ARTICLEID] und redaxo://[ARTICLEID] auch mit CLANG ermöglichen
+		* REX_MEDIA_BUTTON[1,10] -> REX_FILE[1] -> Kategorie [10]
+	* Backend Redesign auf 100% Scaling
+	* Backend auf CSS Layout umstellen
+	* gzip komprimierte outputbuffer-handler ob_start("ob_gzhandler");
+	
+---------------------------------------------------------------------------------
+Known Bugs:
+---------------------------------------------------------------------------------
+
+	* Umbau des Statistiktools. Wenn Scripttime zuende da weitermachen wo es aufgehört hat.
+	* Import/Export klappt nicht auf jedem. Verschiedene System austesten und Liste der Fehler hier auflisten.
+	* Mac/Safari
+		* Medienpool "+" Problem
+		* EditierModul "hoch runter" verrutscht
+	* OOKlassen rückgabewerte wenn leer falsch
+		http://forum.redaxo.de/viewtopic.php?t=720
+
+
+---------------------------------------------------------------------------------
+Changes:
+---------------------------------------------------------------------------------
+
+	* rexExtensionsPoints erstellt [jan]
+		- MEDIA_ADDED, MEDIA_UPDATED
+	* copyContent erscheint nur, wenn mehr als eine Sprache angelegt ist (kills)
+	* Beim Import JS Warnhinweis. "Alte Webseite geht verloren" [import_export] (kills)
+	* Prüfung ob die gd-lib verfügbar ist, bei der installation [image_resize] (kills)
+	* rexExtensionPoints erstellt [kills]
+		- ALL_GENERATED, URL_REWRITE
+	* rexExtensionPoints erstellt [jan]
+		- CAT_ADDED, CAT_UPDATED, CAT_DELETED, CAT_STATUS
+		- ART_ADDED, ART_UPDATED, ART_DELETED, ART_STATUS
+	* rexExtensions eingebaut [kills]
+	* sql::escape() entfernt (unnötig) (kills)
+	* OOArticle::toLink(),OOCategory::toLink() neuer 1. Parameter (NICHT Rückwärtskompatibel!) (kills)
+	* Bestätigungsabfrage beim löschen und importieren eingebaut [import_export] (kills)
+	* rex_copyContent( eingebaut.. Inhalte sind nun von einer Sprache in eine andere kopierbar.. (jan)
+	* class article: setTemplateId und getTemplateId eingebaut.. (jan)
+	* OOF erweitert: neue OOAddon Klasse (kills)
+	* REX_CUR_CLANG, REX_CATEGORY_ID jetzt auch in Templates möglich (kills)
+	* ctypes eingebaut :) .. über ctypes.inc.php einstellbar und über getArticle($ctypeid); aufrufbar (jan)
+	* userverwaltung. developer rausgenommen. (jan)
+	* ob caching der artikel und templates.. ausgabe nun nur über echo moeglich. speichern in variablen moeglich (jan)
+	* wysiwyg resizer als ouput filter [image_resize] (vscope)
+	* OutputFilterCache (Jan)	
+	* OutputFilter (Jan)	
+	* Fallback auf Default-Sprache, wenn keine Lang-Keys der aktuellen Sprache vorhanden sind (kills)
+	* Slice verschieben (System überlegen) (Jan)
+
+Version 3.0 (2005-08-07)

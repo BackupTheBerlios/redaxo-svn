@@ -1,0 +1,73 @@
+simple_user = User Management
+uw_persdata_headline  = Persönliche Daten
+uw_login = Login
+uw_passwort = Passwort
+uw_name = Name
+uw_vorname = Vorname
+uw_geschlecht = Geschlecht
+uw_geschlecht_w = weiblich
+uw_geschlecht_m = männlich
+uw_birthday = Geburtsdatum
+uw_augen = Augenfarbe
+uw_haare =Haarfrabe
+uw_strassse =Strasse
+uw_plz = PLZ
+uw_ort = Ort
+
+uw_group = Group
+
+uw_telefon = Telefon
+uw_mobil = Mobil
+uw_email = email
+
+uw_icq = ICQ
+uw_aim = AIM
+uw_msn = MSN
+uw_skype = Skype
+
+uw_data_stat1 = öffentlich
+uw_data_stat2 = privat
+
+uw_firmendaten_headline = Firmen Daten
+uw_firmenname = Name der Firma
+uw_firmenabteilung = Abteilung
+uw_firmenbetaetigung = Betätigungsfeld
+uw_firmenstrasse =Strasse
+uw_firmenplz = PLZ
+uw_firmenort = Ort
+uw_firmentelefon = Telefon
+uw_firmenmobil = Mobil
+uw_firmenemail = email
+
+uw_pers_eigenschaften_vorlieben = Persönliche Eigenschaften und Vorlieben
+uw_pers_positive = positive Eigenschaften
+uw_pers_negative = negative Eigenschaften
+uw_pers_hobbys = Hobbys
+uw_pers_lieblingsorte = Lieblingsorte
+uw_pers_motto = Motto
+uw_persdata = Datenveröffentlichen
+
+uw_info_headline = User Daten
+uw_info_newsletter = Newsletter
+uw_info_mail = Infomail
+
+uw_user_status = User Status
+uw_user_status_on = online
+uw_user_status_off = offline
+uw_usre_typ = Benutzer-Typ
+
+uw_file1 = Userfile 1
+uw_file2 = Userfile 2
+
+uw_useranlegen = User anlegen
+
+uw_sicherdel = Sicher löschen ?
+
+uw_login_activation = Login aktiviert?
+uw_activation_key = Aktivierungs-Schlüssel
+uw_nein = nein
+uw_ja = ja
+
+uw_creategroup = Add Group
+uw_extras = Extras
+uw_hl_group = Groupinformation
