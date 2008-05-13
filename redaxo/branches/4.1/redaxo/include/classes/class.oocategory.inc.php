@@ -115,8 +115,6 @@ class OOCategory extends OORedaxo
    */
   function getChildren($ignore_offlines = false, $clang = false)
   {
-    global $REX;
-
     if($clang === false)
       $clang = $this->_clang;
 
