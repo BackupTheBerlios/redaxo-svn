@@ -23,6 +23,11 @@ Wichtige Änderungen:
 
 Version 4.1.1 (2008-XX-XX)
   Bugfixes:
+  * Unable to generate Template fehler bei leeren Templates [Markus.Staab]
+    - http://forum.redaxo.de/ftopic8196.html
+  * Import/Export: Exports wurden doppelt gespeichert [Markus.Staab]
+  * BackendSearch: Probleme beim wechseln der Sprache
+    - http://forum.redaxo.de/sutra53556.html#53556 [gr-ha, Markus.Staab] 
   * I18N Locale Handling gefixed [Claudio, Markus.Staab]
     - http://forum.redaxo.de/ftopic9042.html
   * Medienpool: Warnungen behoben [Markus.Staab]
