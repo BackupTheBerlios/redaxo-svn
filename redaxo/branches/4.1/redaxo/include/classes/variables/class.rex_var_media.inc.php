@@ -21,26 +21,16 @@ class rex_var_media extends rex_var
 
   function getACRequestValues($REX_ACTION)
   {
-    $values = rex_request('MEDIA', 'array');
-    for ($i = 1; $i < 11; $i++)
-    {
-      // Nur Werte die urspruenglich gepostet wurden auch uebernehmen
-      // siehe http://forum.redaxo.de/ftopic8174.html
-      if (isset ($values[$i]))
-      {
-        $REX_ACTION['MEDIA'][$i] = stripslashes($values[$i]);
-      }
-    }
+    $values     = rex_request('MEDIA', 'array');
+    $listvalues = rex_request('MEDIALIST', 'array');
 
-    $values = rex_request('MEDIALIST', 'array');
     for ($i = 1; $i < 11; $i++)
     {
-      // Nur Werte die urspruenglich gepostet wurden auch uebernehmen
-      // siehe http://forum.redaxo.de/ftopic8174.html
-      if (isset ($values[$i]))
-      {
-        $REX_ACTION['MEDIALIST'][$i] = stripslashes($values[$i]);
-      }
+      $media     = isset($values[$i]) ? stripslashes($values[$i]) : '';
+      $medialist = isset($listvalues[$i]) ? stripslashes($listvalues[$i]) : '';
+
+      $REX_ACTION['MEDIA'][$i] = $media;
+      $REX_ACTION['MEDIALIST'][$i] = $medialist;
     }
 
     return $REX_ACTION;
@@ -51,10 +41,6 @@ class rex_var_media extends rex_var
     for ($i = 1; $i < 11; $i++)
     {
       $REX_ACTION['MEDIA'][$i] = $this->getValue($sql, 'file'. $i);
-    }
-
-    for ($i = 1; $i < 11; $i++)
-    {
       $REX_ACTION['MEDIALIST'][$i] = $this->getValue($sql, 'filelist'. $i);
     }
 
@@ -67,16 +53,8 @@ class rex_var_media extends rex_var
 
     for ($i = 1; $i < 11; $i++)
     {
-      // Nur Werte die urspruenglich gepostet wurden auch uebernehmen
-      // siehe http://forum.redaxo.de/ftopic8174.html
-      if (isset ($REX_ACTION['MEDIA'][$i]))
-      {
-        $this->setValue($sql, 'file'. $i, $REX_ACTION['MEDIA'][$i], $escape);
-      }
-      if (isset ($REX_ACTION['MEDIALIST'][$i]))
-      {
-        $this->setValue($sql, 'filelist'. $i, $REX_ACTION['MEDIALIST'][$i], $escape);
-      }
+      $this->setValue($sql, 'file'. $i, $REX_ACTION['MEDIA'][$i], $escape);
+      $this->setValue($sql, 'filelist'. $i, $REX_ACTION['MEDIALIST'][$i], $escape);
     }
   }
 
