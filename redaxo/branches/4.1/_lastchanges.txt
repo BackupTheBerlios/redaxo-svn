@@ -23,6 +23,8 @@ Wichtige Änderungen:
 
 Version 4.1.1 (2008-XX-XX)
   Bugfixes:
+  * Probleme bei rex_call_func mit MyClass::MyMethod notation unter PHP5
+    - http://forum.redaxo.de/ftopic9364.html
   * OOCategory::getParent() hat die Sprache nicht uebergeben [gr-ha, Markus.Staab]
     - http://forum.redaxo.de/ftopic9022.html
   * Unable to generate Template fehler bei leeren Templates [Markus.Staab]
