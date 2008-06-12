@@ -22,7 +22,9 @@ Wichtige Änderungen:
 ---------------------------------------------------------------------------------
 
 Version 4.1.1 (2008-XX-XX)
-  Bugfixes:
+  Bugfixes: 
+  * Image-Resize: Fehler beim resize mit der Notation 200w__200h__ [Markus.Staab]
+      - http://forum.redaxo.de/ftopic9292.html    
   * Probleme bei rex_call_func mit MyClass::MyMethod notation unter PHP5
     - http://forum.redaxo.de/ftopic9364.html
   * OOCategory::getParent() hat die Sprache nicht uebergeben [gr-ha, Markus.Staab]
