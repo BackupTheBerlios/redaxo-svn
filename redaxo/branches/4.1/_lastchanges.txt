@@ -23,6 +23,8 @@ Wichtige Änderungen:
 
 Version 4.1.1 (2008-XX-XX)
   Bugfixes: 
+  * Image-Reisze: Problem beim handeln von JPEG Thumbnails [Markus.Staab]
+    - http://forum.redaxo.de/ftopic9842.html?
   * Problem beim speichern von Slices im IE bei gedrueckter ENTER Taste [Markus.Staab]
     - http://forum.redaxo.de/sutra56086.html#56086
   * Image-Resize: Fehler beim resize mit der Notation 200w__200h__ [Markus.Staab]
