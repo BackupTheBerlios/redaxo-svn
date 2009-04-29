@@ -88,7 +88,7 @@ elseif ($function == "fileimport")
   {
     if ($impname == "")
     {
-      $file_temp = getImportDir().'/tar.temp';
+      $file_temp = getImportDir().'/temp.tar.gz';
     }
     else
     {
