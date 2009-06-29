@@ -7,17 +7,25 @@ angehandelt.
 Änderungen im Detail:
 ---------------------------------------------------------------------------------
 
-Version 4.2.1 (2009-xx-xx)
+Version 4.2.2 (2009-xx-xx)
 
-Bugfixes
+  Bugfixes:
+  * Probleme mit Image-Resize auf manchen Servern behoben
+    - http://forum.redaxo.de/ftopic11483.html [pingback, Markus.Staab]
+
+Version 4.2.1 (2009-05-07)
+
+  Wichtig:    
+  * Sicherheitslücke geschlossen [Jan.Kristinus]
+  
+  Bugfixes:
   * OOArticleSlice: Revision
-	http://forum.redaxo.de/ftopic11805.html?
+    - http://forum.redaxo.de/ftopic11805.html
   * Addon
     * Import/Export - Importieren von tars geht nun wieder. 
-    * Image resize - Dateiename bei EP IMAGE_RESIZE_SEND hat gefehlt
     * Register Globals komplett rausgenommen
-    * Kann in manchen FŠllen nicht mehr abwŠrtskompatibel sein. Anpassungen an AddOn/Modulen eventuell nštig.
-
+    * Kann in manchen Fällen nicht mehr abwärtskompatibel sein. Anpassungen an AddOn/Modulen eventuell nötig. 
+    * Image resize: EP mit Imagefile angepasst [Gregor.Harlan]    
 
 Version 4.2.0 (2009-04-22)
 
