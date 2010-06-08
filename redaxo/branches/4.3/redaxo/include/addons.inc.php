@@ -24,8 +24,8 @@ $REX['ADDON']['status']['be_style'] = '1';
 $REX['ADDON']['install']['cronjob'] = '0';
 $REX['ADDON']['status']['cronjob'] = '0';
 
-$REX['ADDON']['install']['image_manager'] = '1';
-$REX['ADDON']['status']['image_manager'] = '1';
+$REX['ADDON']['install']['image_manager'] = '0';
+$REX['ADDON']['status']['image_manager'] = '0';
 
 $REX['ADDON']['install']['image_resize'] = '0';
 $REX['ADDON']['status']['image_resize'] = '0';
@@ -33,8 +33,8 @@ $REX['ADDON']['status']['image_resize'] = '0';
 $REX['ADDON']['install']['import_export'] = '1';
 $REX['ADDON']['status']['import_export'] = '1';
 
-$REX['ADDON']['install']['metainfo'] = '1';
-$REX['ADDON']['status']['metainfo'] = '1';
+$REX['ADDON']['install']['metainfo'] = '0';
+$REX['ADDON']['status']['metainfo'] = '0';
 
 $REX['ADDON']['install']['phpmailer'] = '0';
 $REX['ADDON']['status']['phpmailer'] = '0';

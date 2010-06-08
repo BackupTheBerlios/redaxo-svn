@@ -55,10 +55,10 @@ class OOMediaCategory
 
     $cat_path = $REX['INCLUDE_PATH'].'/generated/files/'.$id.'.mcat';
     if (!file_exists($cat_path))
-		{
-			require_once ($REX['INCLUDE_PATH'].'/functions/function_rex_generate.inc.php');
-    	rex_generateMediaCategory($id);
-		}
+    {
+      require_once ($REX['INCLUDE_PATH'].'/functions/function_rex_generate.inc.php');
+      rex_generateMediaCategory($id);
+    }
 
     if (file_exists($cat_path))
     {
@@ -111,10 +111,10 @@ class OOMediaCategory
   
     $catlist_path = $REX['INCLUDE_PATH'].'/generated/files/'.$id.'.mclist';
     if (!file_exists($catlist_path))
-		{
-			require_once ($REX['INCLUDE_PATH'].'/functions/function_rex_generate.inc.php');
-    	rex_generateMediaCategoryList($id);
-		}
+    {
+      require_once ($REX['INCLUDE_PATH'].'/functions/function_rex_generate.inc.php');
+      rex_generateMediaCategoryList($id);
+    }
 
     if (file_exists($catlist_path))
     {
@@ -260,15 +260,15 @@ class OOMediaCategory
    */
   function inParentTree($anObj)
   {
-  	$tree = $this->getParentTree();
-  	foreach($tree as $treeObj)
-  	{
-  		if($treeObj == $anObj)
-  		{
-  			return true;
-  		}
-  	}
-  	return false;
+    $tree = $this->getParentTree();
+    foreach($tree as $treeObj)
+    {
+      if($treeObj == $anObj)
+      {
+        return true;
+      }
+    }
+    return false;
   }
 
   /**
@@ -308,10 +308,10 @@ class OOMediaCategory
     
       $list_path = $REX['INCLUDE_PATH'].'/generated/files/'.$id.'.mlist';
       if (!file_exists($list_path))
-  		{
-  			require_once ($REX['INCLUDE_PATH'].'/functions/function_rex_generate.inc.php');
-      	rex_generateMediaList($id);
-  		}
+      {
+        require_once ($REX['INCLUDE_PATH'].'/functions/function_rex_generate.inc.php');
+        rex_generateMediaList($id);
+      }
   
       if (file_exists($list_path))
       {
@@ -489,17 +489,22 @@ class OOMediaCategory
    * Stattdessen getCategoryById() nutzen
    */
   function getCategoryByName($name)
-  {
-    global $REX;
-    
-    $sql = rex_sql::factory();
-    $sql->setQuery('SELECT id FROM '. OOMediaCategory :: _getTableName() .'WHERE name="'. $name .'"');
-    if ($sql->getRows() == 1)
+  { 
+    $query = 'SELECT id FROM ' . OOMediaCategory :: _getTableName() . ' WHERE name = "' . $name . '"';
+    $sql = new rex_sql();
+    //$sql->debugsql = true;
+    $result = $sql->getArray($query);
+
+    $media = array ();
+    if (is_array($result))
     {
-      return OOMediaCategory :: getCategoryById($sql->getValue('id'));
+      foreach ($result as $line)
+      {
+        $media[] = OOMediaCategory :: getCategoryById($line['id']);
+      }
     }
 
-    return null;
+    return $media;
   }
 
   /**
