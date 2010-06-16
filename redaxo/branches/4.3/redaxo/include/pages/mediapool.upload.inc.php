@@ -12,7 +12,7 @@ if ($media_method == 'add_file')
       $FILEINFOS['title'] = rex_request('ftitle', 'string');
   
       if (!$PERMALL && !$REX['USER']->hasPerm("media[$rex_file_category]")) 
-      	$rex_file_category = 0;
+        $rex_file_category = 0;
   
       // function in function.rex_mediapool.inc.php
       $return = rex_mediapool_saveMedia($_FILES['file_new'],$rex_file_category,$FILEINFOS,$REX['USER']->getValue("login"));
@@ -45,7 +45,7 @@ if ($media_method == 'add_file')
           if (substr($opener_input_field,0,14)=="REX_MEDIALIST_")
           {
             $js = "selectMedialist('".$file_name."');";
-            $js .= 'location.href = "index.php?page=mediapool&info='.urlencode($I18N->msg('pool_file_added')).'";';
+            $js .= 'location.href = "index.php?page=mediapool&info='.urlencode($I18N->msg('pool_file_added')).'&opener_input_field='.$opener_input_field.'";';
           }
           else
           {
@@ -60,11 +60,11 @@ if ($media_method == 'add_file')
         exit;
       }elseif($return['ok'] == 1)
       {
-      	header('Location:index.php?page=mediapool&info='.urlencode($I18N->msg('pool_file_added')));
-      	exit;
+        header('Location:index.php?page=mediapool&info='.urlencode($I18N->msg('pool_file_added')).'&opener_input_field='.$opener_input_field);
+        exit;
       }else
       {
-      	$warning = $I18N->msg('pool_file_movefailed');
+        $warning = $I18N->msg('pool_file_movefailed');
       }
   
     }else

@@ -7,8 +7,9 @@ angehandelt.
 €nderungen im Detail:
 ---------------------------------------------------------------------------------
 
-Version 4.3.1 (2010-06-08)
+Version 4.3.1 (2010-06-16)
   Anpassungen
+  * Medienpool: Datei Ÿbernehmen war hin und wieder verschwunden
   * tinymce: scrollbar eingebaut
   * fixed: Fehlermeldung bei bestimmten Cronjobtypen.
   * fixed: OOMediaCategory::getCategoryByName() funktionierte nicht mehr
